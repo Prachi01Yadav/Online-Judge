@@ -1,0 +1,40 @@
+spring:
+  application:
+    name: algou-api-service
+
+  # ── H2 (local dev) ──────────────────────────────────────────────
+  datasource:
+    url: jdbc:h2:mem:algoudb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+
+  # To switch to PostgreSQL, comment out H2 above and uncomment:
+  # datasource:
+  #   url: jdbc:postgresql://localhost:5432/algou
+  #   driver-class-name: org.postgresql.Driver
+  #   username: ${DB_USERNAME:algou}
+  #   password: ${DB_PASSWORD:algou}
+
+  h2:
+    console:
+      enabled: true          # http://localhost:8080/h2-console
+      path: /h2-console
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+
+# ── App config ──────────────────────────────────────────────────
+app:
+  jwt:
+    secret: ${JWT_SECRET:my-super-secret-dev-key-that-is-at-least-256-bits-long-for-hs256}
+    expiration-ms: 86400000   # 24 hours
+
+server:
+  port: 8080

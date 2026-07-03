@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@theme {
+  /* Light + dim palette — soft, muted, easy on the eyes */
+  --color-bg-primary: #f5f5f0;
+  --color-bg-secondary: #eceae4;
+  --color-bg-tertiary: #e2e0d8;
+  --color-bg-card: #ffffff;
+  --color-bg-hover: #e8e6df;
+  --color-border-default: #d5d3cb;
+  --color-border-focus: #4f6ef7;
+  --color-accent-blue: #4f6ef7;
+  --color-accent-purple: #7c5cbf;
+  --color-accent-green: #2d9d6f;
+  --color-accent-amber: #c68a17;
+  --color-accent-red: #d94040;
+  --color-text-primary: #1e1e1e;
+  --color-text-secondary: #4b5563;
+  --color-text-muted: #8b8d94;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+}
+
+/* ──── base resets ──── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #c4c2ba;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #a3a19a;
+}
+
+/* ──── animations ──── */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 12px 0 rgba(79, 110, 247, 0.2); }
+  50%      { box-shadow: 0 0 24px 4px rgba(79, 110, 247, 0.35); }
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.animate-fade-in {
+  animation: fadeIn 0.35s ease-out both;
+}
+.animate-spin {
+  animation: spin 0.8s linear infinite;
+}
+.skeleton {
+  background: linear-gradient(90deg, #e2e0d8 25%, #ece9e1 50%, #e2e0d8 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 6px;
+}
