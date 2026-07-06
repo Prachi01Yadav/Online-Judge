@@ -1,0 +1,38 @@
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: algou-postgres
+    environment:
+      POSTGRES_DB: algou
+      POSTGRES_USER: algou
+      POSTGRES_PASSWORD: algou
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  backend:
+    build:
+      context: ./backend/api-service
+    container_name: algou-backend
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/algou
+      - SPRING_DATASOURCE_DRIVER_CLASS_NAME=org.postgresql.Driver
+      - SPRING_DATASOURCE_USERNAME=algou
+      - SPRING_DATASOURCE_PASSWORD=algou
+    depends_on:
+      - db
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: algou-frontend
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+
+volumes:
+  postgres_data:
