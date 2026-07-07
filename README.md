@@ -1,6 +1,6 @@
-# AlgoU Online Compiler
+# AlgoU Online Judge
 
-AlgoU Online Compiler is a web-based code compilation and judging platform that lets users write, execute, and review C++ code in real time. It combines a clean code-editor UI with a sandboxed execution backend and AI-powered code review using Google's Gemini AI.
+AlgoU Online Judge is a web-based code compilation and judging platform that lets users write, execute, and review C++ code in real time. It combines a clean code-editor UI with a sandboxed execution backend and AI-powered code review using Google's Gemini AI.
 
 
 ## Features
