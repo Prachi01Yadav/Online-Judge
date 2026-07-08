@@ -52,31 +52,29 @@ export async function compileCode(
   };
 }
 
-/**
- * Sends code to the AI review endpoint.
- * Currently returns mock suggestions after a simulated delay.
- */
+
 export async function reviewCode(code: string): Promise<ReviewResult> {
-  await delay(1200 + Math.random() * 300);
+  try {
+    const response = await fetch("http://localhost:8080/api/review", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ code }),
+    });
 
-  // Return different suggestions based on code content for a more realistic feel
-  const suggestions: string[] = [
-    "Consider using `const` references for parameters that don't need to be modified to avoid unnecessary copies.",
-    "Add input validation before processing user data to prevent undefined behavior.",
-    "The `using namespace std;` directive pulls all names into the global scope — prefer explicit `std::` prefixes in production code.",
-  ];
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
 
-  if (code.includes("cout")) {
-    suggestions.push(
-      "Use `'\\n'` instead of `std::endl` when you don't need to flush the buffer — it's faster."
-    );
+    const data = await response.json();
+    return { suggestions: data.suggestions || [] };
+    
+  } catch (error) {
+    console.error("Error fetching AI review:", error);
+    return { 
+      suggestions: ["Error connecting to the AI review service. Make sure your backend is running!"] 
+    };
   }
-
-  if (!code.includes("return 0")) {
-    suggestions.push(
-      "While C++11 implicitly returns 0 from `main`, adding an explicit `return 0;` improves readability."
-    );
-  }
-
-  return { suggestions };
 }
+

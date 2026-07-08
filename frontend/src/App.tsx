@@ -96,7 +96,7 @@ const App: React.FC = () => {
             </div>
             <button
               onClick={handleReset}
-              className="flex items-center justify-center gap-2 rounded-lg border border-border-default bg-bg-tertiary px-6 py-3 text-sm font-semibold text-text-secondary transition-all duration-200 hover:border-text-muted hover:text-text-primary hover:bg-bg-hover active:scale-[0.98] cursor-pointer"
+              className="flex self-start items-center justify-center gap-2 rounded-lg border border-border-default bg-bg-tertiary px-8 py-3 text-base font-semibold text-text-secondary transition-all duration-200 hover:border-text-muted hover:text-text-primary hover:bg-bg-hover active:scale-[0.98] cursor-pointer"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -124,7 +124,7 @@ const App: React.FC = () => {
             <button
               onClick={handleRun}
               disabled={isRunning}
-              className="flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-[#5c4033] to-[#3b2516] px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-[#5c4033]/25 transition-all duration-200 hover:shadow-[#5c4033]/40 hover:brightness-110 active:scale-[0.97] disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer w-full"
+              className="flex self-start items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-accent-green to-[#2d5238] px-8 py-3 text-base font-semibold text-white shadow-lg shadow-accent-green/25 transition-all duration-200 hover:shadow-accent-green/40 hover:brightness-110 active:scale-[0.97] disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer"
             >
               {isRunning ? (
                 <span className="inline-block h-4 w-4 animate-spin rounded-full border-2 border-white border-t-transparent" />
@@ -154,7 +154,7 @@ const App: React.FC = () => {
             <button
               onClick={handleReview}
               disabled={isReviewing}
-              className="flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-[#3b302a] to-[#1e1814] px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-[#3b302a]/25 transition-all duration-200 hover:shadow-[#3b302a]/40 hover:brightness-110 active:scale-[0.97] disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer w-full"
+              className="flex self-start items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-[#3b302a] to-[#1e1814] px-8 py-3 text-base font-semibold text-white shadow-lg shadow-[#3b302a]/25 transition-all duration-200 hover:shadow-[#3b302a]/40 hover:brightness-110 active:scale-[0.97] disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer"
             >
               {isReviewing ? (
                 <span className="inline-block h-4 w-4 animate-spin rounded-full border-2 border-white border-t-transparent" />
