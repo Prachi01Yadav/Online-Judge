@@ -21,7 +21,7 @@ const ActionBar: React.FC<ActionBarProps> = ({
       <button
         onClick={onRun}
         disabled={isRunning}
-        className="group relative flex items-center gap-2 rounded-lg bg-gradient-to-r from-accent-green to-emerald-600 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-accent-green/25 transition-all duration-200 hover:shadow-accent-green/40 hover:brightness-110 active:scale-[0.97] disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer"
+        className="group relative flex items-center gap-2 rounded-lg bg-gradient-to-r from-[#5c4033] to-[#3b2516] px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-[#5c4033]/25 transition-all duration-200 hover:shadow-[#5c4033]/40 hover:brightness-110 active:scale-[0.97] disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer"
       >
         {isRunning ? (
           <span className="inline-block h-4 w-4 animate-spin rounded-full border-2 border-white border-t-transparent" />
@@ -42,7 +42,7 @@ const ActionBar: React.FC<ActionBarProps> = ({
       <button
         onClick={onReview}
         disabled={isReviewing}
-        className="group flex items-center gap-2 rounded-lg bg-gradient-to-r from-accent-purple to-violet-600 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-accent-purple/25 transition-all duration-200 hover:shadow-accent-purple/40 hover:brightness-110 active:scale-[0.97] disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer"
+        className="group flex items-center gap-2 rounded-lg bg-gradient-to-r from-[#3b302a] to-[#1e1814] px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-[#3b302a]/25 transition-all duration-200 hover:shadow-[#3b302a]/40 hover:brightness-110 active:scale-[0.97] disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer"
       >
         {isReviewing ? (
           <span className="inline-block h-4 w-4 animate-spin rounded-full border-2 border-white border-t-transparent" />
