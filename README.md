@@ -17,7 +17,7 @@ AlgoU Online Judge is a web-based code compilation and judging platform that let
 |---|---|
 | Frontend | React (Vite) + TypeScript, Monaco Editor, Tailwind CSS |
 | Backend | Java (Spring Boot) |
-| Code Execution | Dockerized sandbox running `g++` |
+| Code Execution | Dockerized sandbox ` |
 | AI Review | Google Gemini API |
 | Database | PostgreSQL (submissions, users, problems ) |
 | Deployment | Docker Compose → cloud (AWS/GCP/Render) |
