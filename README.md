@@ -29,6 +29,6 @@ AlgoU Online Judge is a web-based code compilation and judging platform that let
 3. **Code execution engine** — Dockerized, sandboxed C++ compiler service invoked by backend.
 4. **Gemini AI integration** — Real AI code review wired into `/review`.
 5. **Frontend ↔ backend integration** — Replace mocks with real API calls.
-6. **Online judge features** — Problems, test cases, verdicts (AC/WA/TLE/RE), submission history, auth.
-7. **Deployment & hardening** — Rate limiting, sandboxing hardening, monitoring, CI/CD.
+6. **features** — Problems, test cases, verdicts (AC/WA/TLE/RE), submission history, auth.
+7. **Deployment ** — Rate limiting, sandboxing hardening, monitoring, CI/CD.
 
