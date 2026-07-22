@@ -2,7 +2,10 @@ C:\Users\arche\Desktop\Online-Compiler\backend\api-service\src\main\java\com\alg
 C:\Users\arche\Desktop\Online-Compiler\backend\api-service\src\main\java\com\algou\api\config\SecurityConfig.java
 C:\Users\arche\Desktop\Online-Compiler\backend\api-service\src\main\java\com\algou\api\controller\AuthController.java
 C:\Users\arche\Desktop\Online-Compiler\backend\api-service\src\main\java\com\algou\api\controller\ProblemController.java
+C:\Users\arche\Desktop\Online-Compiler\backend\api-service\src\main\java\com\algou\api\controller\ReviewController.java
 C:\Users\arche\Desktop\Online-Compiler\backend\api-service\src\main\java\com\algou\api\dto\AuthResponse.java
+C:\Users\arche\Desktop\Online-Compiler\backend\api-service\src\main\java\com\algou\api\dto\GeminiRequest.java
+C:\Users\arche\Desktop\Online-Compiler\backend\api-service\src\main\java\com\algou\api\dto\GeminiResponse.java
 C:\Users\arche\Desktop\Online-Compiler\backend\api-service\src\main\java\com\algou\api\dto\LoginRequest.java
 C:\Users\arche\Desktop\Online-Compiler\backend\api-service\src\main\java\com\algou\api\dto\ProblemRequest.java
 C:\Users\arche\Desktop\Online-Compiler\backend\api-service\src\main\java\com\algou\api\dto\ProblemResponse.java
@@ -20,5 +23,6 @@ C:\Users\arche\Desktop\Online-Compiler\backend\api-service\src\main\java\com\alg
 C:\Users\arche\Desktop\Online-Compiler\backend\api-service\src\main\java\com\algou\api\repository\UserRepository.java
 C:\Users\arche\Desktop\Online-Compiler\backend\api-service\src\main\java\com\algou\api\security\JwtAuthFilter.java
 C:\Users\arche\Desktop\Online-Compiler\backend\api-service\src\main\java\com\algou\api\security\JwtService.java
+C:\Users\arche\Desktop\Online-Compiler\backend\api-service\src\main\java\com\algou\api\service\AiReviewService.java
 C:\Users\arche\Desktop\Online-Compiler\backend\api-service\src\main\java\com\algou\api\service\AuthService.java
 C:\Users\arche\Desktop\Online-Compiler\backend\api-service\src\main\java\com\algou\api\service\ProblemService.java

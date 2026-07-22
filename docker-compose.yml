@@ -25,6 +25,13 @@ services:
     depends_on:
       - db
 
+  execution-engine:
+    build:
+      context: ./backend/execution-service
+    container_name: algou-execution
+    ports:
+      - "5000:5000"
+
   frontend:
     build:
       context: ./frontend
