@@ -25,31 +25,30 @@ export async function compileCode(
   code: string,
   input: string
 ): Promise<CompileResult> {
-  await delay(1000 + Math.random() * 500);
+  try {
+    const response = await fetch("http://localhost:8080/api/compile", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ code, input }),
+    });
 
-  // Simulate a compilation error when the code contains obvious syntax issues
-  const hasSyntaxError =
-    !code.includes("int main") && !code.includes("int Main");
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
 
-  if (hasSyntaxError) {
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Error fetching execution result:", error);
     return {
       stdout: "",
-      stderr:
-        "error: 'main' must return 'int'\n" +
-        "note: C++ requires a function named 'main' to be the entry point",
+      stderr: "Error connecting to the execution service. Make sure your backend is running!",
       exitCode: 1,
-      timeMs: 42,
+      timeMs: 0
     };
   }
-
-  return {
-    stdout: input
-      ? `Hello, World!\nYou entered: ${input}`
-      : "Hello, World!\n",
-    stderr: "",
-    exitCode: 0,
-    timeMs: 127,
-  };
 }
 
 
